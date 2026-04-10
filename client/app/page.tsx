@@ -12,8 +12,10 @@ const GET_BOOKS = gql`
 `;
 
 export default function Home() {
-  const { data } = useQuery(GET_BOOKS);
-  console.log(data);
+  const { data: booksData } = useQuery(GET_BOOKS);
+  const { data: usersData } = useQuery(GET_BOOKS);
+  console.log(booksData);
+  console.log(usersData);
 
   return <>fds</>;
 }
