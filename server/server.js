@@ -252,17 +252,18 @@ const typeDefs = `
     author: String
   }
 
- 
+  type Company {
+    name: String
+  }
   
   type User {
     id: ID
     name: String
     username: String
     email: String
+    company: Company
   }
 
-
-    
   type Query {
     books: [Book]
     users: [User]
