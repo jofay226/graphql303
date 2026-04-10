@@ -283,8 +283,8 @@ const resolvers = {
     users: () => {
       return users;
     },
-    bookById: (bookId) => {
-      console.log(bookId);
+    bookById: (_, args) => {
+      console.log(args);
       return "lkdflks";
     },
   },
