@@ -2,20 +2,22 @@
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
 
-const GET_BOOKS = gql`
-  query BOOKS {
+const GET_BOTH = gql`
+  query GetBoth {
     books {
       title
       author
     }
+    users {
+      id
+      name
+      email
+    }
   }
 `;
-
 export default function Home() {
-  const { data: booksData } = useQuery(GET_BOOKS);
-  const { data: usersData } = useQuery(GET_BOOKS);
-  console.log(booksData);
-  console.log(usersData);
+  const { data } = useQuery(GET_BOTH);
+  console.log(data);
 
   return <>fds</>;
 }

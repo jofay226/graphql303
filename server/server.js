@@ -4,10 +4,12 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 // in memory DB
 const books = [
   {
+    id: "1",
     title: "The Awakening",
     author: "Kate Chopin",
   },
   {
+    id: "2",
     title: "City of Glass",
     author: "Paul Auster",
   },
@@ -264,9 +266,12 @@ const typeDefs = `
     company: Company
   }
 
+
+
   type Query {
     books: [Book]
     users: [User]
+    bookById(id: ID!): String
   }
 `;
 
@@ -277,6 +282,10 @@ const resolvers = {
     },
     users: () => {
       return users;
+    },
+    bookById: (bookId) => {
+      console.log(bookId);
+      return "lkdflks";
     },
   },
 };
